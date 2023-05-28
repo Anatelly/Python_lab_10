@@ -44,7 +44,7 @@ def meaning(word):
         print('Definition not found')
 
 
-def save(word):  # сохранение слова
+def save(word):
     response = requests.get(f'https://api.dictionaryapi.dev/api/v2/entries/en/{word}')
     data = response.json()
     with open("dic.txt", "w") as f:
@@ -52,7 +52,7 @@ def save(word):  # сохранение слова
     print("The data is saved to a file dic.txt")
 
 
-def example(word):  # пример слова
+def example(word):
     try:
         response = requests.get(f'https://api.dictionaryapi.dev/api/v2/entries/en/{word}')
         data = response.json()
